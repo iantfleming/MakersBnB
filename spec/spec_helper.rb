@@ -18,6 +18,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative '../app/app'
 
 require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 
