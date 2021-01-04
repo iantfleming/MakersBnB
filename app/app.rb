@@ -3,8 +3,7 @@ require './lib/listing.rb'
 
 class MakersBnb < Sinatra::Base
   get '/' do
-    # @listings = Listing.all
-    # p @listings
+    @listings = Listing.all
     erb :homepage
   end
 
