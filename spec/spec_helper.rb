@@ -36,7 +36,7 @@ ENV['RACK_ENV'] = 'test'
 
 
 
-# Capybara.app = ClassName (Same as the class in app.rb)
+Capybara.app = MakersBnb
 
 
 

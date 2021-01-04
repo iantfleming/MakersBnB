@@ -1,5 +1,5 @@
 require 'sinatra/base'
 
-# class ClassName < Sinatra::Base    
+class MakersBnb < Sinatra::Base    
   run! if app_file == $0
 end
