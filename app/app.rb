@@ -1,8 +1,11 @@
 require 'sinatra/base'
+require './lib/listing.rb'
 
-class MakersBnb < Sinatra::Base    
+class MakersBnb < Sinatra::Base
   get '/' do
-    'working!'
+    # @listings = Listing.all
+    # p @listings
+    erb :homepage
   end
 
   run! if app_file == $0

@@ -7,4 +7,16 @@ class Listing
     @description = description
   end
 
+  def self.all
+    if ENV['ENVIRONMENT'] == 'test'
+      connection = PG.connect(dbname: 'MakersBnb_test')
+    else
+      connection = PG.connect(dbname: 'MakersBnb')
+    end
+
+    result = connection.exec("SELECT * FROM listings")
+      result.map do |listing|
+        Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
+      end
+  end
 end
