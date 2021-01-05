@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Listing
   attr_reader :name, :price, :description
 
@@ -8,15 +10,16 @@ class Listing
   end
 
   def self.all
-    if ENV['ENVIRONMENT'] == 'test'
-      connection = PG.connect(dbname: 'MakersBnb_test')
-    else
-      connection = PG.connect(dbname: 'MakersBnb')
-    end
+    connection = if ENV['ENVIRONMENT'] == 'test'
+                   PG.connect(dbname: 'makersbnb_test')
+                 else
+                   PG.connect(dbname: 'makersbnb')
+                 end
 
-    result = connection.exec("SELECT * FROM listings")
-      result.map do |listing|
-        Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
-      end
+    result = connection.exec('SELECT * FROM listings')
+    result.map do |listing|
+      Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
+    p listing
+    end
   end
 end

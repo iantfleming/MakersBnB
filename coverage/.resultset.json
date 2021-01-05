@@ -1,10 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/milou/Projects/week_5/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
+      "/Users/rsujee/Makers/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
         "lines": [
           null,
           null,
+          null,
+          null,
           1,
           1,
           null,
@@ -14,14 +16,16 @@
           1,
           1,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/milou/Projects/week_5/MakersBnB/spec/unit/listing_spec.rb": {
+      "/Users/rsujee/Makers/MakersBnB/spec/unit/listing_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -36,6 +40,6 @@
         ]
       }
     },
-    "timestamp": 1609802267
+    "timestamp": 1609842625
   }
 }
