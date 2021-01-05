@@ -22,6 +22,7 @@ require 'simplecov'
 require 'simplecov-console'
 require_relative '../app/app'
 require 'pg'
+require_relative './feature/web_helper.rb'
 
 require File.join(File.dirname(__FILE__), '..', 'app/app.rb')
 
