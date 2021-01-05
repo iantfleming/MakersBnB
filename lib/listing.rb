@@ -24,7 +24,7 @@ class Listing
   end
 
   def self.create(name:, price:, description:)
-    connection = if ENV['RACK_ENV'] == 'test'
+    connection = if ENV['ENVIRONMENT'] == 'test'
       PG.connect(dbname: 'makersbnb_test')
     else
       PG.connect(dbname: 'makersbnb')
