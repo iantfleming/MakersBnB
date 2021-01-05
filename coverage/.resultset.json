@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
+
         "lines": [
           null,
           null,
@@ -11,11 +11,6 @@
           1,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -39,11 +34,7 @@
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          null,
+
           null,
           null
         ]
@@ -60,6 +51,6 @@
         ]
       }
     },
-    "timestamp": 1609861352
+
   }
 }
