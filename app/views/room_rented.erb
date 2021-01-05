@@ -1,0 +1,13 @@
+You have rented London for £100
+
+
+
+
+<ul>
+  <% @listings.each do |list| %>
+    <li>
+      <%= list[:name] %>
+      <%= list[:price] %>
+    </li>
+  <% end %>
+</ul>
