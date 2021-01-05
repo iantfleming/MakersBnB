@@ -19,8 +19,8 @@ class Listing
 
     result = con.exec('SELECT * FROM listings')
     result.map do |listing|
-      # Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
-      rented_rooms = { :id => listing['id'], :name => listing['name'], :price => listing['price'], :description => listing['description'] }
+      Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
+      # rented_rooms = { :id => listing['id'], :name => listing['name'], :price => listing['price'], :description => listing['description'] }
     end
   end
 end
