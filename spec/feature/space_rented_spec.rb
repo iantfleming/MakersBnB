@@ -3,6 +3,10 @@ require 'pg'
 
 # the test is failing because homepage.erb is empty
 feature 'User is informed they have rented a space' do
+  before(:each) do
+    empty
+    add_original_list
+  end
   scenario 'A user rents the space' do
     visit '/'
     click_button('rent')

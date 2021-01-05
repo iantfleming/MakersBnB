@@ -7,6 +7,10 @@ require 'pg'
 
 # the test is failing because homepage.erb is empty
 feature 'setting up' do
+  before(:each) do
+    empty
+    add_original_list
+  end  
   scenario 'A user can see site listings' do
     listing = Listing.create(name:'London', price: 100, description:'Wonderful one-bedroom apartment with falling ceilings')
     persisted_data = persisted_data(id: listing.id, table: 'listings')

@@ -1,16 +1,18 @@
 {
   "RSpec": {
     "coverage": {
-
+      "/Users/ianfleming/Documents/week5/spec/feature/space_rented_spec.rb": {
         "lines": [
-          null,
-          null,
-          null,
-          null,
           1,
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           1,
           1,
@@ -18,39 +20,82 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/unit/listing_spec.rb": {
+      "/Users/ianfleming/Documents/week5/spec/feature/viewing_homepage_spec.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
-          null,
-          1,
-          null,
           null,
           null,
           1,
           1,
+          null,
+          null,
           1,
           1,
           1,
-
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/database_helper.rb": {
+      "/Users/ianfleming/Documents/week5/spec/unit/listing_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
+          1,
+          null,
+          1,
+          null,
           null,
           1,
           2,
           2,
-          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/ianfleming/Documents/week5/spec/database_helper.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       }
     },
-
+    "timestamp": 1609866754
   }
 }
