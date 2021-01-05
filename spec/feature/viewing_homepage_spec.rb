@@ -8,7 +8,8 @@ require 'pg'
 # the test is failing because homepage.erb is empty
 feature 'setting up' do
   scenario 'A user can see site listings' do
-    Listing.new('London', 100, 'Wonderful one-bedroom apartment with falling ceilings')
+    listing = Listing.create(name:'London', price: 100, description:'Wonderful one-bedroom apartment with falling ceilings')
+    persisted_data = persisted_data(id: listing.id, table: 'listings')
     visit '/'
     expect(page).to have_content('London')
     expect(page).to have_content(100)

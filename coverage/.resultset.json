@@ -1,14 +1,16 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/space_rented_spec.rb": {
+
         "lines": [
-          1,
-          1,
+          null,
+          null,
           null,
           null,
           1,
           1,
+          null,
+          null,
           1,
           1,
           1,
@@ -16,45 +18,39 @@
           null
         ]
       },
-      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/unit/listing_spec.rb": {
         "lines": [
           null,
           null,
-          null,
-          null,
           1,
           1,
           null,
+          1,
+          null,
+          null,
           null,
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+
           null,
           null
         ]
       },
-      "/home/luke/Makers/makers_bnb/MakersBnB/spec/unit/listing_spec.rb": {
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/database_helper.rb": {
         "lines": [
-          null,
-          null,
           1,
           null,
           1,
-          1,
-          1,
-          null,
-          0,
-          0,
-          0,
-          null,
+          2,
+          2,
+          2,
           null
         ]
       }
     },
-    "timestamp": 1609856151
+
   }
 }
