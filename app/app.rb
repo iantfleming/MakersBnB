@@ -25,5 +25,14 @@ class MakersBnb < Sinatra::Base
     erb :room_rented
   end
 
+  get '/list_new_room' do
+    erb :list_new_room
+  end
+
+  post '/list_new_room' do
+    Listing.create(name: params[:name], price: params[:price], description: params[:description])
+    redirect '/'
+  end
+
   run! if app_file == $PROGRAM_NAME
 end
