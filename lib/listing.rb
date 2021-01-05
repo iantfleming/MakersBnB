@@ -1,9 +1,10 @@
-# frozen_string_literal: true
+require 'pg'
 
 class Listing
-  attr_reader :name, :price, :description
+  attr_reader :id, :name, :price, :description
 
-  def initialize(name, price, description)
+  def initialize(id:, name:, price:, description:)
+    @id = id
     @name = name
     @price = price
     @description = description
