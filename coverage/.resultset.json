@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/space_rented_spec.rb": {
+      "/Users/ianfleming/Documents/week5/spec/feature/space_rented_spec.rb": {
         "lines": [
           1,
           1,
@@ -16,7 +16,7 @@
           null
         ]
       },
-      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
+      "/Users/ianfleming/Documents/week5/spec/feature/viewing_homepage_spec.rb": {
         "lines": [
           null,
           null,
@@ -37,7 +37,7 @@
           null
         ]
       },
-      "/home/luke/Makers/makers_bnb/MakersBnB/spec/unit/listing_spec.rb": {
+      "/Users/ianfleming/Documents/week5/spec/unit/listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -55,6 +55,6 @@
         ]
       }
     },
-    "timestamp": 1609856151
+    "timestamp": 1609862125
   }
 }
