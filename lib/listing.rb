@@ -21,7 +21,6 @@ class Listing
     result.map do |listing|
       # Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
       rented_rooms = { :id => listing['id'], :name => listing['name'], :price => listing['price'], :description => listing['description'] }
-    p listing
     end
   end
 end
