@@ -11,16 +11,16 @@ class Listing
   end
 
   def self.all
-    connection = if ENV['ENVIRONMENT'] == 'test'
-                   PG.connect(dbname: 'makersbnb_test')
-                 else
-                   PG.connect(dbname: 'makersbnb')
-                 end
+    if ENV['ENVIRONMENT'] == 'test'
+      con = PG.connect(dbname: 'makersbnb_test')
+    else
+      con = PG.connect(dbname: 'makersbnb')
+    end
 
-    result = connection.exec('SELECT * FROM listings')
+    result = con.exec('SELECT * FROM listings')
     result.map do |listing|
       Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'])
-    p listing
+      # rented_rooms = { :id => listing['id'], :name => listing['name'], :price => listing['price'], :description => listing['description'] }
     end
   end
 end

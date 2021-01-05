@@ -1,1 +1,14 @@
-<%= @listings %>
+<% @listings.each do |listing|%>
+  <div>
+
+  <h2><%= listing.name %></h2><p>
+  £<%= listing.price %><p>
+  <i><%= listing.description %></i><p>
+  <form action="/click_to_rent/<%= listing.id %>" method="post">
+    <label for="rent_button">
+      <input type="submit" name="rent">
+    </label>
+  </form>
+  </div>
+<% end %>
+ 

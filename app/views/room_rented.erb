@@ -1,0 +1,7 @@
+<ul>
+  <% @listings.each do |list| %>
+    <li>
+      You have rented <%= list[:name] %> for £<%= list[:price] %>
+    </li>
+  <% end %>
+</ul>
