@@ -34,6 +34,14 @@ class MakersBnb < Sinatra::Base
 
   post '/list_new_room' do
     Listing.create(name: params[:name], price: params[:price], description: params[:description])
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/images/#{filename}"
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+    end
     redirect '/'
   end
 
@@ -57,7 +65,7 @@ class MakersBnb < Sinatra::Base
       flash[:notice]="Welcome, #{user.firstname}"
       redirect '/'
     else
-      flash[:notice]="The email or password is incorrect. Please try again."
+      flash[:notice]='The email or password is incorrect. Please try again.'
       redirect '/login'
     end
   end
