@@ -1,0 +1,28 @@
+div {
+    height: 200px;
+    width: 50%;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 15px;
+}
+
+h2 {
+    font-weight: 800;
+    color: #FF5A5F;
+}
+
+.button {
+    float: center;
+    width: 150px;
+    height: 42px;
+    margin: 0 auto;
+    border: 1px solid #FF5A5F;
+    margin: 0 0 3px 0;
+    background-color: #FF5A5F;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}

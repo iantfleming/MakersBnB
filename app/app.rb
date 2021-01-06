@@ -5,6 +5,7 @@ require './lib/listing.rb'
 
 class MakersBnb < Sinatra::Base
   enable :sessions
+  set :session_secret, 'super secret'
 
   get '/' do
     @listings = Listing.all
