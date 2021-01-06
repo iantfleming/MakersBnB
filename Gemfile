@@ -12,4 +12,6 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'sinatra'
+  gem 'bcrypt'
+  gem 'sinatra-flash', '~> 0.3.0' 
 end

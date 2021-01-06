@@ -13,6 +13,10 @@ I want to be able to list a room.
 As a user,
 So that I can rent out spaces,
 I want to be able to pay for a room.
+
+As a potential customer,
+So that I can use the websites features,
+I want to be able to create an account.
 ```
 
 ![Domain Model](https://imgur.com/gdmDQB7.png)
