@@ -11,6 +11,13 @@
   </head>
   <body>
  
+<% flash.keys.each do |type| %>
+<div data-alert class="flash <%= type %> alert-box radius">
+<%= flash[type] %>
+</div>
+</div>
+<% end %> 
+
    <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -28,7 +35,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
           <li><a href="/register">Sign up</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="/login">Login</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       </form>
@@ -42,13 +49,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
-
-<% flash.keys.each do |type| %>
-<div data-alert class="flash <%= type %> alert-box radius">
-<%= flash[type] %>
-</div>
-</div>
-<% end %> 
 
 <% @listings.each do |listing|%>
   <div>

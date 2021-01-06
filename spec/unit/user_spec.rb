@@ -25,4 +25,12 @@ describe 'User' do
     end
   end
 
+  describe '.login' do
+    it 'authenticates the user email and password' do
+      user = User.create(firstname:'Dennis', lastname:'the Menace', email: 'test@example.com', password:'password123')
+      authenticated_user = User.login(email: 'test@example.com', password:'password123')
+      expect(authenticated_user.id).to eq user.id
+    end
+  end      
+
 end

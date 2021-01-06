@@ -39,12 +39,27 @@ class MakersBnb < Sinatra::Base
 
   post '/register' do
     user = User.create(firstname: params[:firstname], lastname: params[:lastname], email: params[:email], password: params[:password])
-    flash[:notice]="Welcome, #{user.firstname}"
+    flash[:notice]="Thank you for registering with MakersBnB, #{user.firstname}"
     redirect '/'
   end
 
   get '/register' do
     erb :registration
+  end
+
+  get '/login' do
+    erb :login
+  end
+
+  post '/login' do
+    user = User.login(email: params[:email], password: params[:password])
+    if user
+      flash[:notice]="Welcome, #{user.firstname}"
+      redirect '/'
+    else
+      flash[:notice]="The email or password is incorrect. Please try again."
+      redirect '/login'
+    end
   end
 
   run! if app_file == $PROGRAM_NAME
