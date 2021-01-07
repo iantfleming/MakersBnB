@@ -34,8 +34,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+          <% if !@user %> 
           <li><a href="/register">Sign up</a></li>
           <li><a href="/login">Login</a></li>
+          <% end %>
+          <% if @user %>
+            <form action="/sessions" method="post">
+            <input type="hidden" name="_method" value="Delete">
+            <input type="submit" value="Sign Out">
+            </form>
+          <% end %>
       </ul>
       <form class="navbar-form navbar-left">
       </form>
@@ -63,7 +71,7 @@
   <i> Listing posted on <%= listing.date %></i><p>
   <i> Available from <%= listing.available_from %>
   Available to <%= listing.available_to %></i><p>
-  <%= p @user %>
+  <% if @user %>
     <form action="/click_to_rent/<%= listing.id %>" method="post">
       <label for="rent_button">
         <input type="submit" name="rent" value="Rent">
@@ -71,7 +79,9 @@
     </form>
   <% end %>
   </div>
-
+  <% end %>
+ <% if @user %>
 <form action='/list_new_room' method='get'>
 <input type='submit' value='List Room'>
 </form>
+ <% end %>

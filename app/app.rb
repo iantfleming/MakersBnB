@@ -7,7 +7,7 @@ require './lib/user.rb'
 
 class MakersBnb < Sinatra::Base
   set :session_secret, 'super secret'
-  enable :sessions
+  enable :sessions, :method_override
   register Sinatra::Flash
 
   get '/' do
@@ -60,13 +60,19 @@ class MakersBnb < Sinatra::Base
   post '/login' do
     user = User.login(email: params[:email], password: params[:password])
     if user
-      session[:user] = user.email
+      p session[:user] = user.email
       flash[:notice] = "Welcome, #{user.firstname}"
       redirect '/'
     else
       flash[:notice] = 'The email or password is incorrect. Please try again.'
       redirect '/login'
     end
+  end
+
+  delete '/sessions' do
+    flash[:notice] = "Goodbye!"
+    session.delete(:user)
+    redirect '/'
   end
 
   run! if app_file == $PROGRAM_NAME
