@@ -33,7 +33,7 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/list_new_room' do
-    Listing.create(name: params[:name], price: params[:price], description: params[:description])
+    Listing.create(name: params[:name], price: params[:price], description: params[:description], image: params[:image])
     if params[:image] && params[:image][:filename]
       filename = params[:image][:filename]
       file = params[:image][:tempfile]

@@ -12,7 +12,7 @@ feature 'setting up' do
     add_original_list
   end  
   scenario 'A user can see site listings' do
-    listing = Listing.create(name:'London', price: 100, description:'Wonderful one-bedroom apartment with falling ceilings')
+    listing = Listing.create(name:'London', price: 100, description:'Wonderful one-bedroom apartment with falling ceilings', image:'/images/House1.jpeg')
     persisted_data = persisted_data(id: listing.id, table: 'listings')
     visit '/'
     expect(page).to have_content('London')
