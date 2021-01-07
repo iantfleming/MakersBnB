@@ -1,0 +1,15 @@
+<% if @bookings %>
+  <% @bookings.each do |booking| %>
+  <li><%= Listing.find(id: booking.listing_id).name %></li>
+  <li>Requested by: <%= booking.guest_email %></li>
+  <li>Dates: <%= booking.dates_from %>-<%= booking.dates_to %></li>
+  <li>Booking Status: <%= booking.status%></li>
+  <% if booking.status != "approved" %>
+  <form action="booking/<%= booking.id %>" method="post">
+  <input type="submit" value="Approve">
+  <% end %>
+  </form>
+  <%end%>
+<% else %>
+You have no bookings.
+<%end%>
