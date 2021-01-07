@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/ianfleming/Documents/week5/spec/feature/space_rented_spec.rb": {
+      "/Users/milou/Projects/week_5/MakersBnB/spec/feature/space_rented_spec.rb": {
         "lines": [
           1,
           1,
@@ -20,7 +20,7 @@
           null
         ]
       },
-      "/Users/ianfleming/Documents/week5/spec/feature/viewing_homepage_spec.rb": {
+      "/Users/milou/Projects/week_5/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
         "lines": [
           null,
           null,
@@ -39,6 +39,10 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -46,7 +50,7 @@
           null
         ]
       },
-      "/Users/ianfleming/Documents/week5/spec/unit/listing_spec.rb": {
+      "/Users/milou/Projects/week_5/MakersBnB/spec/unit/listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -70,6 +74,9 @@
           1,
           1,
           1,
+          1,
+          1,
+          1,
           null,
           null,
           null,
@@ -84,7 +91,7 @@
           null
         ]
       },
-      "/Users/ianfleming/Documents/week5/spec/database_helper.rb": {
+      "/Users/milou/Projects/week_5/MakersBnB/spec/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -96,6 +103,6 @@
         ]
       }
     },
-    "timestamp": 1609866754
+    "timestamp": 1610015129
   }
 }
