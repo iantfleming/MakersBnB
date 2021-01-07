@@ -10,9 +10,9 @@ feature 'setting up' do
   before(:each) do
     empty
     add_original_list
-  end  
+  end
   scenario 'A user can see site listings' do
-    listing = Listing.create(name:'London', price: 100, description:'Wonderful one-bedroom apartment with falling ceilings', image:'/images/House1.jpeg')
+    listing = Listing.create(name: 'London', price: 100, description: 'Wonderful one-bedroom apartment with falling ceilings', image: '/images/House1.jpeg')
     persisted_data = persisted_data(id: listing.id, table: 'listings')
     visit '/'
     expect(page).to have_content('London')

@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'pg'
 
 def empty
   con = PG.connect(dbname: 'makersbnb_test')
-  rs = con.exec "TRUNCATE users, listings"
+  rs = con.exec 'TRUNCATE users, listings'
 end
 
 def add_original_list

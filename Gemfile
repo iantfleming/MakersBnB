@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
 group :test do
+  gem 'bcrypt'
   gem 'capybara'
   gem 'pg'
   gem 'rspec'
@@ -12,6 +13,5 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'sinatra'
-  gem 'bcrypt'
-  gem 'sinatra-flash', '~> 0.3.0' 
+  gem 'sinatra-flash', '~> 0.3.0'
 end

@@ -52,7 +52,11 @@
 
 <% @listings.each do |listing|%>
   <div>
-<img src="/images/<% listing.image[0] %>" height=120px width=150px>
+<% if listing.image != nil %>
+     <img src="images/<%= listing.image %>" height=120px width=150px> 
+<% else %> 
+     <img src="images/DefaultHome.jpg" height=120px width=150px> 
+<% end %>
   <h2><%= listing.name %></h2><p>
   £<%= listing.price %><p>
   <i><%= listing.description %></i><p>
