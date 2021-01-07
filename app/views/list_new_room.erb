@@ -1,5 +1,5 @@
 <h1> Name </h1>
-<form action='/list_new_room' method='post'>
+<form action='/list_new_room' method='post'  enctype="multipart/form-data">
   <input type='text' name='name'></input>
 <h1> Price </h1>
   <input type='text' name='price'></input>
@@ -11,6 +11,8 @@ ex. date format 2021.29.01 <br>
 
 <h1> Available to </h1>
   <input type='date' name='available_to'></input>
+  <h1>Upload Image</h1>
+  <input type="file" name="image">
   <br>
   <br>
   <input type='submit' value='List Room'>

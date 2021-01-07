@@ -18,29 +18,32 @@ class MakersBnb < Sinatra::Base
     session[:list_id] = params[:id]
     connection = PG.connect(dbname: 'makersbnb_test')
     connection.exec("SELECT * FROM listings WHERE id = '#{params[:id]}'")
-    redirect '/room_rented/:id'
+    @listing = Listing.find(id: session[:list_id])
+    erb :room_rented
   end
 
-  get '/room_rented/:id' do
-    @listing = Listing.find(id: session[:list_id])
-    # @listings = Listing.all
-    # @list_id = session[:list_id]
-    erb :room_rented
+  post '/list_new_room' do
+    if params[:image] && params[:image][:filename]
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: params[:image][:filename])
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/images/#{filename}"
+      File.open(path, 'wb') do |f|
+        f.write(file.read)
+      end
+    else
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image:'')
+    end
+    redirect '/'
   end
 
   get '/list_new_room' do
     erb :list_new_room
   end
 
-  post '/list_new_room' do
-    p params[:available_from]
-    Listing.create(name: params[:name], price: params[:price], description: params[:description], date: params[:date], available_from: params[:available_from], available_to: params[:available_to])
-    redirect '/'
-  end
-
   post '/register' do
     user = User.create(firstname: params[:firstname], lastname: params[:lastname], email: params[:email], password: params[:password])
-    flash[:notice]="Thank you for registering with MakersBnB, #{user.firstname}"
+    flash[:notice] = "Thank you for registering with MakersBnB, #{user.firstname}"
     redirect '/'
   end
 
@@ -58,7 +61,7 @@ class MakersBnb < Sinatra::Base
       flash[:notice]="Welcome, #{user.firstname}"
       redirect '/'
     else
-      flash[:notice]="The email or password is incorrect. Please try again."
+      flash[:notice] = 'The email or password is incorrect. Please try again.'
       redirect '/login'
     end
   end

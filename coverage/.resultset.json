@@ -1,6 +1,95 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/chat_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aracho/Makers/Projects/MakersBnB/lib/chat.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/login_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/registration_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/space_rented_spec.rb": {
         "lines": [
           1,
           1,
@@ -19,6 +108,7 @@
           null
         ]
       },
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
         "lines": [
           null,
           null,
@@ -48,6 +138,7 @@
           null
         ]
       },
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/unit/listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -71,7 +162,7 @@
           1,
           1,
           1,
-          1,
+          null,
           1,
           1,
           null,
@@ -88,6 +179,7 @@
           null
         ]
       },
+      "/Users/aracho/Makers/Projects/MakersBnB/spec/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -139,5 +231,6 @@
         ]
       }
     },
+    "timestamp": 1610030267
   }
 }

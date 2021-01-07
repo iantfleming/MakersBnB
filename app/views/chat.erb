@@ -1,0 +1,11 @@
+<% @chats.each do |chat| %>
+<li><%= chat.sender %></li>
+<li><%= chat.receiver %></li>
+<li><%= chat.message %></li>
+<li><%= chat.created_at %></li>
+<%end%>
+
+<form action="/new_chat" method="post">
+<input type="text" name="message"></input>
+<input type="submit" value="Reply">
+</form>
