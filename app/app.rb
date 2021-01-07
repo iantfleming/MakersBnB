@@ -4,6 +4,8 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/listing.rb'
 require './lib/user.rb'
+require './lib/email'
+require 'mail'
 
 class MakersBnb < Sinatra::Base
   enable :sessions
@@ -19,6 +21,15 @@ class MakersBnb < Sinatra::Base
     connection = PG.connect(dbname: 'makersbnb_test')
     connection.exec("SELECT * FROM listings WHERE id = '#{params[:id]}'")
     @listing = Listing.find(id: session[:list_id])
+
+    mail = Mail.new do
+      from     'happyhost123@gmail.com'
+      to       'happyhost123@gmail.com'
+      subject  "MakersBnB: A guest has requested to book your space."
+      body     "A potential guest has requested to book your space. Please sign in to MakersBnB to approve the request."
+    end
+    mail.deliver!
+
     erb :room_rented
   end
 
@@ -56,13 +67,20 @@ class MakersBnb < Sinatra::Base
   end
 
   post '/login' do
-    user = User.login(email: params[:email], password: params[:password])
-    if user
-      flash[:notice]="Welcome, #{user.firstname}"
+    @user = User.login(email: params[:email], password: params[:password])
+    session[:user_email] = @user.email
+    if @user
+      flash[:notice]="Welcome, #{@user.firstname}"
       redirect '/'
     else
       flash[:notice] = 'The email or password is incorrect. Please try again.'
       redirect '/login'
+    end
+  end
+
+  def current_user
+    if session[:user_email]
+      User.find(session[:user_email])
     end
   end
 

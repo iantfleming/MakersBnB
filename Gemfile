@@ -14,4 +14,5 @@ group :test do
   gem 'sinatra'
   gem 'bcrypt'
   gem 'sinatra-flash', '~> 0.3.0' 
+  gem 'mail'
 end
