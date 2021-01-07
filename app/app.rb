@@ -19,13 +19,8 @@ class MakersBnb < Sinatra::Base
     session[:list_id] = params[:id]
     connection = PG.connect(dbname: 'makersbnb_test')
     connection.exec("SELECT * FROM listings WHERE id = '#{params[:id]}'")
-    redirect '/room_rented/:id'
-  end
-
-  get '/room_rented/:id' do
+    #redirect "/room_rented/:id"
     @listing = Listing.find(id: session[:list_id])
-    # @listings = Listing.all
-    # @list_id = session[:list_id]
     erb :room_rented
   end
 
