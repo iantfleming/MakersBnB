@@ -1,0 +1,12 @@
+<% flash.keys.each do |type| %>
+<div data-alert class="flash <%= type %> alert-box radius">
+<%= flash[type] %>
+</div>
+</div>
+<% end %> 
+<h1>Log In</h1>
+<form action="/login" method="post">
+Email<input type="email" name="email" required></input>
+Password<input type="password" name="password" required></input>
+<input type="submit" value="Log In">
+</form>
