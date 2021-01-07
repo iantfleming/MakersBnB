@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
- 
+
 <% flash.keys.each do |type| %>
 <div data-alert class="flash <%= type %> alert-box radius">
 <%= flash[type] %>
 </div>
 </div>
-<% end %> 
+<% end %>
 
    <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -48,14 +48,14 @@
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav> 
+</nav>
 
 <% @listings.each do |listing|%>
   <div>
   <% if listing.image != nil %>
-      <img src="images/<%= listing.image %>" height=120px width=150px> 
-  <% else %> 
-      <img src="images/DefaultHome.jpg" height=120px width=150px> 
+      <img src="images/<%= listing.image %>" height=120px width=150px>
+  <% else %>
+      <img src="images/DefaultHome.jpg" height=120px width=150px>
   <% end %>
   <h2><%= listing.name %></h2><p>
   £<%= listing.price %><p>
@@ -63,13 +63,14 @@
   <i> Listing posted on <%= listing.date %></i><p>
   <i> Available from <%= listing.available_from %>
   Available to <%= listing.available_to %></i><p>
-  <form action="/click_to_rent/<%= listing.id %>" method="post">
-    <label for="rent_button">
-      <input type="submit" name="rent" value="Rent">
-    </label>
-  </form>
+  <%= p @user %>
+    <form action="/click_to_rent/<%= listing.id %>" method="post">
+      <label for="rent_button">
+        <input type="submit" name="rent" value="Rent">
+      </label>
+    </form>
+  <% end %>
   </div>
-<% end %>
 
 <form action='/list_new_room' method='get'>
 <input type='submit' value='List Room'>

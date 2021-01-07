@@ -6,10 +6,12 @@ require './lib/listing.rb'
 require './lib/user.rb'
 
 class MakersBnb < Sinatra::Base
+  set :session_secret, 'super secret'
   enable :sessions
   register Sinatra::Flash
 
   get '/' do
+    @user = User.find(session[:user])
     @listings = Listing.all
     erb :homepage
   end
@@ -32,7 +34,7 @@ class MakersBnb < Sinatra::Base
         f.write(file.read)
       end
     else
-      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image:'')
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: '')
     end
     redirect '/'
   end
@@ -58,7 +60,8 @@ class MakersBnb < Sinatra::Base
   post '/login' do
     user = User.login(email: params[:email], password: params[:password])
     if user
-      flash[:notice]="Welcome, #{user.firstname}"
+      session[:user] = user.email
+      flash[:notice] = "Welcome, #{user.firstname}"
       redirect '/'
     else
       flash[:notice] = 'The email or password is incorrect. Please try again.'

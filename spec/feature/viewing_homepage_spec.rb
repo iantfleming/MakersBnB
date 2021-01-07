@@ -12,7 +12,7 @@ feature 'setting up' do
     add_original_list
   end
   scenario 'A user can see site listings' do
-    listing = Listing.create(name:'London', price: 100, description:'Wonderful one-bedroom apartment with falling ceilings', date: ('2021-06-01'), available_from: ('2021-07-01'), available_to: ('2021-08-01'), image: '/images/House1.jpeg')
+    listing = Listing.create(name: 'London', price: 100, description: 'Wonderful one-bedroom apartment with falling ceilings', date: '2021-06-01', available_from: '2021-07-01', available_to: '2021-08-01', image: '/images/House1.jpeg')
     persisted_data = persisted_data(id: listing.id, table: 'listings')
     visit '/'
     # binding.pry
