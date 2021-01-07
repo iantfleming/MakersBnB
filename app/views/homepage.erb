@@ -56,6 +56,9 @@
   <h2><%= listing.name %></h2><p>
   £<%= listing.price %><p>
   <i><%= listing.description %></i><p>
+  <i> Listing posted on <%= listing.date %></i><p>
+  <i> Available from <%= listing.available_from %>
+  Available to <%= listing.available_to %></i><p>
   <form action="/click_to_rent/<%= listing.id %>" method="post">
     <label for="rent_button">
       <input type="submit" name="rent">
@@ -67,10 +70,3 @@
 <form action='/list_new_room' method='get'>
 <input type='submit' value='List Room'>
 </form>
-  </body>
-</html>
-
-
-
-
-
