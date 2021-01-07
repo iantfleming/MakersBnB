@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require 'sinatra/flash'
 require './lib/listing.rb'
+require './lib/user.rb'
 
 class MakersBnb < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash
 
   get '/' do
     @listings = Listing.all
@@ -32,6 +35,31 @@ class MakersBnb < Sinatra::Base
   post '/list_new_room' do
     Listing.create(name: params[:name], price: params[:price], description: params[:description])
     redirect '/'
+  end
+
+  post '/register' do
+    user = User.create(firstname: params[:firstname], lastname: params[:lastname], email: params[:email], password: params[:password])
+    flash[:notice]="Thank you for registering with MakersBnB, #{user.firstname}"
+    redirect '/'
+  end
+
+  get '/register' do
+    erb :registration
+  end
+
+  get '/login' do
+    erb :login
+  end
+
+  post '/login' do
+    user = User.login(email: params[:email], password: params[:password])
+    if user
+      flash[:notice]="Welcome, #{user.firstname}"
+      redirect '/'
+    else
+      flash[:notice]="The email or password is incorrect. Please try again."
+      redirect '/login'
+    end
   end
 
   run! if app_file == $PROGRAM_NAME
