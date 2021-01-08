@@ -10,9 +10,15 @@
   <p>Requested by: <%= booking.guest_email %></p>
   <p>Dates: <%= booking.dates_from %>-<%= booking.dates_to %></p>
   <p>Booking Status: <%= booking.status%></p>
-  <% if booking.status != "approved" %>
+  <% if booking.status == "pending" %>
   <form action="booking/<%= booking.id %>" method="post">
+  <input type="hidden" name="decision" value="approved">
   <input type="submit" value="Approve">
+  </form>
+  <form action="booking/<%= booking.id %>" method="post">
+   <input type="hidden" name="decision" value="declined">
+  <input type="submit" value="Decline">
+  </form>
   <% end %>
   </form>
   <%end%>

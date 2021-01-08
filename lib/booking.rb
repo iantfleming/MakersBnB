@@ -33,12 +33,12 @@ class Booking
     end
   end
 
-  def self.approve(id)
+  def self.update(id, decision)
     con = if ENV['ENVIRONMENT'] == 'test'
       PG.connect(dbname: 'makersbnb_test')
     else
       PG.connect(dbname: 'makersbnb')
     end
-    result = con.exec("UPDATE bookings SET status = 'approved' WHERE id = #{id};")
+    result = con.exec("UPDATE bookings SET status = '#{decision}' WHERE id = #{id};")
   end
 end
