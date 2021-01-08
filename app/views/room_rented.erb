@@ -31,6 +31,12 @@
             <li><a href="/login">Login</a></li>
             <li><a href="/list_new_room">List a space</a></li>
         </ul>
+                    <ul class="nav navbar-nav navbar-right">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="search_button" type="submit">Search</button>
+    </form>
+      </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
@@ -41,11 +47,13 @@
 
   <div class=" text-center">
     <div class="card text-center rented" style="width: 40%">
+      <h3>Rental Request</h3>
+      <br>
       <p>You have requested to rent <%= @listing.name %> for £<%= @listing.price %>.
       <p>An email was sent to the host for approval.
 
 
-      <br><br><button type="button"><a href="/" style="text-decoration:none;color:black;">Back to Main</a></button>
+      <br><br><a><button class="back_button" type="button" href="/">Back to Main</button></a>
       <p>
     </div>
     <footer>MakersBnB 2021. All rights reserved.</footer>
@@ -54,4 +62,3 @@
 </body>
 </html>
 
->>>>>>> main

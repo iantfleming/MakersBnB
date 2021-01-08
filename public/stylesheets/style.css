@@ -3,6 +3,13 @@ body {
     background-size: cover;
 }
 
+.flash {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5em;
+}
+
 .navbar-brand {
     color: snow;
     font-weight: bold;
@@ -31,6 +38,7 @@ body {
 
 .container {
     background-color: transparent;
+    padding-bottom: 20px;
 }
 
 .card {
@@ -38,6 +46,8 @@ body {
     background-color: snow;
     border: #FF5A5F 3px solid;
     border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .card-img-top {
@@ -73,9 +83,12 @@ div input {
 }
 
 input[type=submit] {
-    color: black;
     background-color: #FF5A5F;
-    border-radius: 15px;
+    border-radius: 5px;
+    width: 80px;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
 }
 
 input[type=submit]:hover {
@@ -116,5 +129,53 @@ div .login {
 }
 
 .login-btn {
-    margin: 10px;
+    background-color: #FF5A5F;
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
+}
+
+.button {
+    background-color: #FF5A5F;
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
+}
+
+.button:hover {
+    border: black solid 2px;
+}
+
+.search_button {
+    background-color: #FF5A5F;
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
+}
+
+.search_button:hover {
+    border: black solid 2px;
+}
+
+.back_button {
+    background-color: #FF5A5F;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    margin-top: 5px;
+    border: none;
+}
+
+.back_button:hover {
+    border: black solid 2px;
+}
+
+input .sign_out {
+    background-color: black;
 }

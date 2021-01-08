@@ -12,12 +12,6 @@
   </head>
   <body>
 
-<% flash.keys.each do |type| %>
-<div data-alert class="flash <%= type %> alert-box radius">
-<%= flash[type] %>
-</div>
-<% end %>
-
 <div class="banner">
 
     <nav class="navbar navbar-dark bg-transparent">
@@ -36,37 +30,37 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-
         <% if !@user %>
            <li><a href="/register">Sign up</a></li>
            <li><a href="/login">Login</a></li>
-             <% end %>
-             <% if @user %>
-               <form action="/sessions" method="post">
-               <input type="hidden" name="_method" value="Delete">
-               <input type="submit" value="Sign Out">
-               </form>
-               <form action="/my_bookings" method="get">
-               <input type="submit" value="My bookings">
-               </form>
-             <% end %>
+           <li><a href="/list_new_room">List a space</a></li>
+        <% else %>
+          <li>
+            <form action="/sessions" method="post">
+              <input type="hidden" name="_method" value="Delete">
+              <a><input class="sign_out" type="submit" value="Sign Out" style="background-color: transparent; margin-top: 7px;"></a>
+            </form>
+          </li>
+          <li><a href="/my_bookings" method="get" type="submit" value="My bookings">My Bookings</a></li>
+        <% end %>
       </ul>
       <form class="navbar-form navbar-left">
       </form>
       <ul class="nav navbar-nav navbar-right">
-      <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-
-          <li><a href="/register">Sign up</a></li>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/list_new_room">List a space</a></li>
-
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="search_button" type="submit">Search</button>
+    </form>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<% flash.keys.each do |type| %>
+<div data-alert class="flash <%= type %> alert-box radius">
+<%= flash[type] %>
+</div>
+<% end %>
 
 <h1><span>MakersBnB.</span> Make our house your home.</h1>
 
@@ -95,7 +89,7 @@
           Available to <%= listing.available_to %></i><p>
           <% if @user %>
             <form action="/click_to_rent/<%= listing.id %>" method="post">
-              Date<input type="date" required name="booking_date">
+              Date: <input type="date" required name="booking_date">
               <label for="rent_button">
                 <input type="submit" name="rent" value="Rent">
               </label>
@@ -109,8 +103,7 @@
 <% end %>
 </div>
 </div>
-
-<footer>MakersBnB 2021. All rights reserved.</footer>
 </body>
+<footer>MakersBnB 2021. All rights reserved.</footer>
 </html>
 
