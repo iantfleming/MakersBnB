@@ -31,7 +31,7 @@ class MakersBnb < Sinatra::Base
       body     "A potential guest has requested to book your space. Please sign in to MakersBnB to approve the request."
     end
     mail.deliver!
-    Booking.create(listing_id: params[:id], guest_email:session[:user], host_email:@listing.host, status:'pending', dates_from: Time.new.strftime('%d/%m/%Y'), dates_to: Time.new.strftime('%d/%m/%Y'))
+    Booking.create(listing_id: params[:id], guest_email:session[:user], host_email:@listing.host, status:'pending', dates_from: params[:booking_date], dates_to: params[:booking_date])
     erb :room_rented
   end
 

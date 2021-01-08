@@ -29,7 +29,7 @@ class Booking
     result = con.exec("SELECT * FROM bookings WHERE host_email = '#{email}'")
     return nil if result.count.zero?
     result.map do |booking|
-      p Booking.new(id: booking['id'], listing_id: booking['listing_id'], guest_email: booking['guest_email'], host_email: booking['host_email'], status: booking['status'], dates_from: booking['dates_from'], dates_to:booking['dates_to'])
+      Booking.new(id: booking['id'], listing_id: booking['listing_id'], guest_email: booking['guest_email'], host_email: booking['host_email'], status: booking['status'], dates_from: booking['dates_from'], dates_to:booking['dates_to'])
     end
   end
 

@@ -11,7 +11,8 @@ feature 'User is informed they have rented a space' do
   end
   scenario 'A user rents the space' do
     visit '/'
-    click_button('rent')
+    select('2021-01-15', from: 'booking_date')
+    click_button('Rent')
     expect(page).to have_content('You have rented London for £100')
   end
 end
