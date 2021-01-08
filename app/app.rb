@@ -95,7 +95,7 @@ class MakersBnb < Sinatra::Base
   post '/booking/:id' do
     Booking.approve(params[:id])
     flash[:notice] = "You have succesfully approved the request"
-    redirect '/'
+    redirect '/my_bookings'
   end
 
 

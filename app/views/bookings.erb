@@ -1,3 +1,9 @@
+<% flash.keys.each do |type| %>
+<div data-alert class="flash <%= type %> alert-box radius">
+<%= flash[type] %>
+</div>
+</div>
+<% end %>
 <% if @bookings %>
   <% @bookings.each do |booking| %>
   <h1><%= Listing.find(id: booking.listing_id).name %></h1>
@@ -11,5 +17,6 @@
   </form>
   <%end%>
 <% else %>
-You have no bookings.
+You have no booking requests.
 <%end%>
+<br><br><button type="button"><a href="/" style="text-decoration:none;color:black;">Back to Main</a></button>
