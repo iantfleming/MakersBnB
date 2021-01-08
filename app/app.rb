@@ -24,7 +24,7 @@ class MakersBnb < Sinatra::Base
 
   post '/list_new_room' do
     if params[:image] && params[:image][:filename]
-      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: params[:image][:filename])
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: params[:image][:filename], host:session[:user])
       filename = params[:image][:filename]
       file = params[:image][:tempfile]
       path = "./public/images/#{filename}"
@@ -32,7 +32,7 @@ class MakersBnb < Sinatra::Base
         f.write(file.read)
       end
     else
-      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: '')
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: params[:image][:filename], host:session[:user])
     end
     redirect '/'
   end
@@ -58,6 +58,7 @@ class MakersBnb < Sinatra::Base
   post '/login' do
     user = User.login(email: params[:email], password: params[:password])
     if user
+      session[:user] = user.email
       flash[:notice] = "Welcome, #{user.firstname}"
       redirect '/'
     else
