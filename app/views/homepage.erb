@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="">
   </head>
   <body>
- 
+
 <% flash.keys.each do |type| %>
 <div data-alert class="flash <%= type %> alert-box radius">
 <%= flash[type] %>
 </div>
 </div>
-<% end %> 
+<% end %>
 
    <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -34,8 +34,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-          <li><a href="/register">Sign up</a></li>
-          <li><a href="/login">Login</a></li>
+        <% if !@user %>
+           <li><a href="/register">Sign up</a></li>
+           <li><a href="/login">Login</a></li>
+             <% end %>
+             <% if @user %>
+               <form action="/sessions" method="post">
+               <input type="hidden" name="_method" value="Delete">
+               <input type="submit" value="Sign Out">
+               </form>
+               <form action="/my_bookings" method="get">
+               <input type="submit" value="My bookings">
+               </form>
+             <% end %>
       </ul>
       <form class="navbar-form navbar-left">
       </form>
@@ -44,18 +55,17 @@
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav> 
+</nav>
 
 <% @listings.each do |listing|%>
   <div>
   <% if listing.image != nil %>
-      <img src="images/<%= listing.image %>" height=120px width=150px> 
-  <% else %> 
-      <img src="images/DefaultHome.jpg" height=120px width=150px> 
+      <img src="images/<%= listing.image %>" height=120px width=150px>
+  <% else %>
+      <img src="images/DefaultHome.jpg" height=120px width=150px>
   <% end %>
   <h2><%= listing.name %></h2><p>
   £<%= listing.price %><p>
@@ -63,14 +73,18 @@
   <i> Listing posted on <%= listing.date %></i><p>
   <i> Available from <%= listing.available_from %>
   Available to <%= listing.available_to %></i><p>
-  <form action="/click_to_rent/<%= listing.id %>" method="post">
-    <label for="rent_button">
-      <input type="submit" name="rent" value="Rent">
-    </label>
-  </form>
+    <% if @user %>
+    <form action="/click_to_rent/<%= listing.id %>" method="post">
+    Date<input type="date" required name="booking_date">
+      <label for="rent_button">
+        <input type="submit" name="rent" value="Rent">
+      </label>
+    </form>
+  <% end %>
   </div>
 <% end %>
-
+<% if @user %>
 <form action='/list_new_room' method='get'>
 <input type='submit' value='List Room'>
 </form>
+<% end %>

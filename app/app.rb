@@ -32,7 +32,7 @@ class MakersBnb < Sinatra::Base
         f.write(file.read)
       end
     else
-      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image:'')
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: '')
     end
     redirect '/'
   end
@@ -58,7 +58,7 @@ class MakersBnb < Sinatra::Base
   post '/login' do
     user = User.login(email: params[:email], password: params[:password])
     if user
-      flash[:notice]="Welcome, #{user.firstname}"
+      flash[:notice] = "Welcome, #{user.firstname}"
       redirect '/'
     else
       flash[:notice] = 'The email or password is incorrect. Please try again.'
