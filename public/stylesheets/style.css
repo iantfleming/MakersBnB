@@ -1,0 +1,120 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1536257104079-aa99c6460a5a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80;");
+    background-size: cover;
+}
+
+.navbar-brand {
+    color: snow;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar li a {
+    color: snow;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.banner {
+    background-color: transparent;
+    height: 200px
+}
+
+.banner h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.banner h1 span {
+    color: #FF5A5F
+}
+
+.container {
+    background-color: transparent;
+}
+
+.card {
+    display: inline-block;
+    background-color: snow;
+    border: #FF5A5F 3px solid;
+    border-radius: 15px;
+}
+
+.card-img-top {
+    border-top-right-radius: 13px;
+    border-top-left-radius: 13px;
+    width: 100%;
+    height: 13vw;
+    object-fit: cover;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FF5A5F;
+    color: snow;
+    text-align: center;
+}
+
+.listing {
+    display: inline-block;
+    background-color: white;
+    border: #FF5A5F 3px solid;
+    border-radius: 15px;
+    padding: 100px;
+    margin: 100px;
+    width: 100px;
+}
+
+div input {
+    border: 2px solid #FF5A5F;
+}
+
+input[type=submit] {
+    color: black;
+    background-color: #FF5A5F;
+    border-radius: 15px;
+}
+
+input[type=submit]:hover {
+    border: black solid 2px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.inputfile label {
+    font-weight: 700;
+    color: snow;
+    background-color: snow;
+    display: inline-block;
+}
+
+label {
+    font-weight: normal;
+}
+
+.banner_light {
+    background-color: transparent;
+    height: 150px
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 span {
+    color: #FF5A5F
+}
+
+div .login {
+    height: 275px;
+}
+
+.login-btn {
+    margin: 10px;
+}
