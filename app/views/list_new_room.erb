@@ -1,18 +1,66 @@
-<h1> Name </h1>
-<form action='/list_new_room' method='post'  enctype="multipart/form-data">
-  <input type='text' name='name'></input>
-<h1> Price </h1>
-  <input type='number' min="0" name='price'></input>
-<h1> Description </h1>
-  <input type='text' name='description'></input>
-<h1> Available from </h1>
-  <input type='date' name='available_from'></input>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MakersBnB - List a new space</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+  <body>
 
-<h1> Available to </h1>
-  <input type='date' name='available_to'></input>
-  <h1>Upload Image</h1>
-  <input type="file" name="image">
-  <br>
-  <br>
-  <input type='submit' value='List Room'>
-</form>
+<div class="banner_light">
+
+  <nav class="navbar navbar-dark bg-transparent">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar">Sign up</span>
+        <span class="icon-bar">Login</span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><i class="fab fa-airbnb"></i> MakersBnB</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+          <li><a href="/register">Sign up</a></li>
+          <li><a href="/login">Login</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+
+<h1><span>MakersBnB.</span> List your space.</h1>
+
+</div>
+
+<div class="listing_form_container text-center">
+  <div class="card text-center" style="width: 40%">
+    <form action='/list_new_room' method='post'  enctype="multipart/form-data">
+    <h4> Name </h4><input type='text' name='name'></input>
+    <h4> Price </h4><input type='number' min="0" name='price'></input>
+    <h4> Description </h4>
+      <input type='text' name='description'></input>
+    <h4> Available from </h4>
+      <input type='date' name='available_from'></input>
+    <h4> Available to </h4>
+      <input type='date' name='available_to'></input>
+    <h4>Upload Image</h4>
+      <center><input type="file" name="image" class="inputfile"></center>
+    <br>
+      <input type='submit' value='List Room'>
+    <p>
+    </form>
+  </div>
+  <p>
+<footer>MakersBnB 2021. All rights reserved.</footer>
+</div>
+</body>
+</html>
