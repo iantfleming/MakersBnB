@@ -6,10 +6,12 @@ require './lib/listing.rb'
 require './lib/user.rb'
 
 class MakersBnb < Sinatra::Base
-  enable :sessions
+  set :session_secret, 'super secret'
+  enable :sessions, :method_override
   register Sinatra::Flash
 
   get '/' do
+    @user = User.find(session[:user])
     @listings = Listing.all
     erb :homepage
   end
@@ -19,6 +21,14 @@ class MakersBnb < Sinatra::Base
     connection = PG.connect(dbname: 'makersbnb_test')
     connection.exec("SELECT * FROM listings WHERE id = '#{params[:id]}'")
     @listing = Listing.find(id: session[:list_id])
+    mail = Mail.new do
+      from     'happyhost123@gmail.com'
+      to       'happyhost123@gmail.com'
+      subject  "MakersBnB: A guest has requested to book your space."
+      body     "A potential guest has requested to book your space. Please sign in to MakersBnB to approve the request."
+    end
+    mail.deliver!
+    Booking.create(listing_id: params[:id], guest_email:session[:user], host_email:@listing.host, status:'pending', dates_from: params[:booking_date], dates_to: params[:booking_date])
     erb :room_rented
   end
 
@@ -32,7 +42,7 @@ class MakersBnb < Sinatra::Base
         f.write(file.read)
       end
     else
-      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: params[:image][:filename], host:session[:user])
+      Listing.create(name: params[:name], price: params[:price], description: params[:description], date: Time.new.strftime('%d/%m/%Y'), available_from: params[:available_from], available_to: params[:available_to], image: '', host:session[:user])
     end
     redirect '/'
   end
@@ -65,6 +75,24 @@ class MakersBnb < Sinatra::Base
       flash[:notice] = 'The email or password is incorrect. Please try again.'
       redirect '/login'
     end
+  end
+
+  delete '/sessions' do
+    flash[:notice] = "Goodbye!"
+    session.delete(:user)
+    redirect '/'
+  end
+
+  get '/my_bookings' do
+    "my bookings..."
+    @bookings = Booking.find(session[:user])
+    erb :bookings
+  end
+
+  post '/booking/:id' do
+    Booking.update(params[:id], params[:decision])
+    flash[:notice] = "You have succesfully #{params[:decision]} the request"
+    redirect '/my_bookings'
   end
 
   run! if app_file == $PROGRAM_NAME
