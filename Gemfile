@@ -14,4 +14,5 @@ group :test do
   gem 'simplecov-console', require: false
   gem 'sinatra'
   gem 'sinatra-flash', '~> 0.3.0'
+  gem 'mail'
 end

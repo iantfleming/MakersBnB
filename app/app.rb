@@ -5,6 +5,8 @@ require 'sinatra/flash'
 require './lib/listing.rb'
 require './lib/user.rb'
 require './lib/booking'
+require './lib/email'
+require 'mail'
 
 class MakersBnb < Sinatra::Base
   set :session_secret, 'super secret'
@@ -22,6 +24,13 @@ class MakersBnb < Sinatra::Base
     connection = PG.connect(dbname: 'makersbnb_test')
     connection.exec("SELECT * FROM listings WHERE id = '#{params[:id]}'")
     @listing = Listing.find(id: session[:list_id])
+    mail = Mail.new do
+      from     'happyhost123@gmail.com'
+      to       'happyhost123@gmail.com'
+      subject  "MakersBnB: A guest has requested to book your space."
+      body     "A potential guest has requested to book your space. Please sign in to MakersBnB to approve the request."
+    end
+    mail.deliver!
     Booking.create(listing_id: params[:id], guest_email:session[:user], host_email:@listing.host, status:'pending', dates_from: Time.new.strftime('%d/%m/%Y'), dates_to: Time.new.strftime('%d/%m/%Y'))
     erb :room_rented
   end
