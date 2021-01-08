@@ -3,56 +3,17 @@
     "coverage": {
       "/home/luke/Makers/makers_bnb/MakersBnB/spec/chat_spec.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/home/luke/Makers/makers_bnb/MakersBnB/lib/chat.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
           null,
           null,
-          1,
-          1,
-          1,
-          null,
-          0,
-          null,
-          1,
-          1,
-          0,
           null,
           null,
-          1,
-          0,
-          0,
           null,
-          0,
           null,
-          0,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -60,6 +21,8 @@
       },
       "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/login_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -75,6 +38,8 @@
       },
       "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/registration_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -91,6 +56,8 @@
       },
       "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/space_rented_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -103,7 +70,8 @@
           1,
           1,
           1,
-          1,
+          0,
+          0,
           null,
           null
         ]
@@ -187,16 +155,18 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/home/luke/Makers/makers_bnb/MakersBnB/spec/unit/user_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
           1,
-          null,
           1,
           3,
           null,
@@ -226,11 +196,10 @@
           1,
           null,
           null,
-          null,
           null
         ]
       }
     },
-    "timestamp": 1610069206
+    "timestamp": 1610094203
   }
 }

@@ -13,7 +13,8 @@ describe 'Listing' do
 
   describe '.create' do
     it 'creates a new listing' do
-      listing = Listing.create(name: 'London', price: 100, description: 'Wonderful one-bedroom apartment with falling ceilings', date: '2021-06-01', available_from: '2021-07-01', available_to: '2021-08-01', image: '/images/House1.jpeg')
+      listing = Listing.create(name: 'London', price: 100, description: 'Wonderful one-bedroom apartment with falling ceilings', date: '2021-06-01', available_from: '2021-07-01', available_to: '2021-08-01', image: '/images/House1.jpeg', host:'host@example.com')
+
       persisted_data = persisted_data(id: listing.id, table: 'listings')
       expect(listing).to be_a Listing
       expect(listing.id).to eq persisted_data['id']
@@ -28,7 +29,7 @@ describe 'Listing' do
 
   describe '.find' do
     it 'returns the requested listing' do
-      listing = Listing.create(name: 'London', price: 100, description: 'Wonderful one-bedroom apartment with falling ceilings', date: '2021-06-01', available_from: '2021-07-01', available_to: '2021-08-01', image: '/images/House1.jpeg')
+      listing = Listing.create(name: 'London', price: 100, description: 'Wonderful one-bedroom apartment with falling ceilings', date: '2021-06-01', available_from: '2021-07-01', available_to: '2021-08-01', image: '/images/House1.jpeg', host: 'host@example.com')
       persisted_data = persisted_data(id: listing.id, table: 'listings')
       result = Listing.find(id: listing.id)
       expect(result.id).to eq listing.id

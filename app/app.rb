@@ -4,6 +4,9 @@ require 'sinatra/base'
 require 'sinatra/flash'
 require './lib/listing.rb'
 require './lib/user.rb'
+require './lib/booking'
+require './lib/email'
+require 'mail'
 
 class MakersBnb < Sinatra::Base
   set :session_secret, 'super secret'
