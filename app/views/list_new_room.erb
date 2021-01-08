@@ -30,8 +30,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-          <li><a href="/register">Sign up</a></li>
-          <li><a href="/login">Login</a></li>
+        <% if @user %>
+           <li><a href="/register">Sign up</a></li>
+           <li><a href="/login">Login</a></li>
+           <li><a href="/list_new_room">List a space</a></li>
+        <% else %>
+          <li>
+            <form action="/sessions" method="post">
+              <input type="hidden" name="_method" value="Delete">
+              <a><input class="sign_out" type="submit" value="Sign Out" style="background-color: transparent; margin-top: 7px;"></a>
+            </form>
+          </li>
+          <li><a href="/my_bookings" method="get" type="submit" value="My bookings">My Bookings</a></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
     <form class="form-inline my-2 my-lg-0">
