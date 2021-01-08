@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/chat_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/chat_spec.rb": {
         "lines": [
           null,
           null,
@@ -19,7 +19,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/login_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/login_spec.rb": {
         "lines": [
           null,
           null,
@@ -36,7 +36,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/registration_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/registration_spec.rb": {
         "lines": [
           null,
           null,
@@ -54,7 +54,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/space_rented_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/space_rented_spec.rb": {
         "lines": [
           null,
           null,
@@ -76,7 +76,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/feature/viewing_homepage_spec.rb": {
         "lines": [
           null,
           null,
@@ -106,7 +106,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/unit/listing_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/unit/listing_spec.rb": {
         "lines": [
           null,
           null,
@@ -147,7 +147,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/database_helper.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -159,7 +159,7 @@
           null
         ]
       },
-      "/Users/aracho/Makers/Projects/MakersBnB/spec/unit/user_spec.rb": {
+      "/home/luke/Makers/makers_bnb/MakersBnB/spec/unit/user_spec.rb": {
         "lines": [
           null,
           null,

@@ -1,5 +1,57 @@
-<p>You have requested to rent <%= @listing.name %> for £<%= @listing.price %>.
-<p>An email was sent to the host for approval.
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MakersBnB - Your journey is just beginning</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+
+  <div class="banner_light">
+
+    <nav class="navbar navbar-dark bg-transparent">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><i class="fab fa-airbnb"></i> MakersBnB</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="/register">Sign up</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/list_new_room">List a space</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<h1><span>MakersBnB.</span> Your journey is just beginning.</h1>
+
+</div>
+
+  <div class=" text-center">
+    <div class="card text-center rented" style="width: 40%">
+      <p>You have requested to rent <%= @listing.name %> for £<%= @listing.price %>.
+      <p>An email was sent to the host for approval.
 
 
-<br><br><button type="button"><a href="/" style="text-decoration:none;color:black;">Back to Main</a></button>
+      <br><br><button type="button"><a href="/" style="text-decoration:none;color:black;">Back to Main</a></button>
+      <p>
+    </div>
+    <footer>MakersBnB 2021. All rights reserved.</footer>
+  </div>
+
+</body>
+</html>
+
+>>>>>>> main

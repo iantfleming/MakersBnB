@@ -38,8 +38,6 @@ As a host,
 So that I can rent out my space,
 I want to approve a booking request
 
-
-
 ```
 
 ![Domain Model](https://imgur.com/gdmDQB7.png)
