@@ -5,5 +5,5 @@ CREATE TABLE bookings (
     host_email text,
     status text,
     dates_from text,
-    dates_to text,
+    dates_to texts
 );

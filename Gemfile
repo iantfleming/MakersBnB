@@ -16,3 +16,5 @@ group :test do
   gem 'sinatra-flash', '~> 0.3.0'
   gem 'mail'
 end
+
+gem "webrick", "~> 1.7"
